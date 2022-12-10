@@ -1,7 +1,6 @@
 import React from "react";
 import Spinner from "./Spinner";
 import NewsItem from "./NewsItem";
-import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -38,6 +37,7 @@ const News = (props) => {
   };
   useEffect(() => {
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
   const fetchMoreData = async () => {
@@ -94,16 +94,5 @@ const News = (props) => {
   );
 };
 
-// News.defaultProps = {
-//   country: "in",
-//   pageSize: 8,
-//   category: "general",
-//   apiKey: process.env.REACT_APP_NEWS_API,
-// };
-// News.PropTypes = {
-//   country: PropTypes.string,
-//   pageSize: PropTypes.number,
-//   category: PropTypes.string,
-// };
 
 export default News;
